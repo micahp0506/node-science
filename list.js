@@ -1,20 +1,11 @@
-'use strict';
+'use strict'
 
-// This is a constructor function
 class Node {
-    constructor(data) {
-        this.payload = data;
-        this.next = null;
-    }
+  constructor (data) {
+    this.payload = data
+    this.next = null
+  }
 }
-// This is the same as above
-// function Node (data) {
-//   this.payload = data
-// }
-const h = new Node('hello');
-const w = new Node('world');
-
-// console.log(h, w);
 
 class List {
   constructor () {
@@ -22,7 +13,12 @@ class List {
     this.tail = null
   }
 
-  add (node) {
+  addHead (node) {
+    node.next = this.head
+    this.head = node
+  }
+
+  addTail (node) {
     if (this.head) {
       this.tail.next = node
       this.tail = node
@@ -30,6 +26,21 @@ class List {
       this.head = node
       this.tail = node
     }
+  }
+
+  removeTail () {
+    let current = this.head
+
+    while (current.next !== this.tail) {
+      current = current.next
+    }
+
+    current.next = null
+    this.tail = current
+  }
+
+  removeHead () {
+
   }
 }
 
@@ -41,5 +52,6 @@ list.add(new Node('D'))
 list.add(new Node('E'))
 list.add(new Node('F'))
 console.log(list)
+
 
 
