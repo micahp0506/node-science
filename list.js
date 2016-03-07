@@ -1,5 +1,7 @@
 'use strict'
 
+
+// Singly lengthed list
 class Node {
   constructor (data) {
     this.payload = data
