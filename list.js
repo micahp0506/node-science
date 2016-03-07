@@ -17,21 +17,31 @@ const w = new Node('world');
 // console.log(h, w);
 
 class List {
-    constructor() {
-        this.head = null
+  constructor () {
+    this.head = null
+  }
+
+  add (node) {
+    if (this.head) {
+      let current = this.head
+
+      while(current.next) {
+        current = current.next
+      }
+      current.next = node
+    } else {
+      this.head = node
     }
-    add (node) {
-        node.next = this.head;
-        this.head = node;
-    }
+  }
 }
 
 const list = new List
-// console.log(list);
-list.add(new Node('A'));
-// console.log(list);
-list.add(new Node('B'));
-list.add(new Node('C'));
-console.log(list);
-console.log("First Item is ", list.head.payload);
+list.add(new Node('A'))
+list.add(new Node('B'))
+list.add(new Node('C'))
+list.add(new Node('D'))
+list.add(new Node('E'))
+list.add(new Node('F'))
+console.log(list)
+
 
