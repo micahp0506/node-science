@@ -14,6 +14,7 @@ class List {
   }
 
   addHead (node) {
+    this.tail = this.tail || node
     node.next = this.head
     this.head = node
   }
@@ -21,11 +22,11 @@ class List {
   addTail (node) {
     if (this.head) {
       this.tail.next = node
-      this.tail = node
     } else {
       this.head = node
-      this.tail = node
     }
+
+    this.tail = node
   }
 
   removeTail () {
@@ -40,7 +41,7 @@ class List {
   }
 
   removeHead () {
-
+    this.head = this.head.next;
   }
 }
 
@@ -52,6 +53,3 @@ list.add(new Node('D'))
 list.add(new Node('E'))
 list.add(new Node('F'))
 console.log(list)
-
-
-
