@@ -29,18 +29,40 @@ function swap (array, index1, index2) {
 // }
 // console.log('bubbled', bubbleSort(arr))
 
-function insertionSort (array) {
-    for (let i = 1; i< array.length; i++) {
-        for(let j = i; j > 0; j--) {
-            if (array[j - 1] > array[j]) {
-                swap(array, j-1, j);
-                console.log(chalk.red(util.inspect(array)));
-           } else {
-                console.log(chalk.dim(util.inspect(array)));
-           }
+// function insertionSort (array) {
+//     for (let i = 1; i< array.length; i++) {
+//         for(let j = i; j > 0; j--) {
+//             if (array[j - 1] > array[j]) {
+//                 swap(array, j-1, j);
+//                 console.log(chalk.red(util.inspect(array)));
+//            } else {
+//                 console.log(chalk.dim(util.inspect(array)));
+//            }
+//         }
+//     }
+//     return array;
+// }
+// console.log('insertion', insertionSort(arr))
+
+function selectionSort (array) {
+    for (let i = 0; i < array.length; i++) {
+        let minimumIndex = i;
+        for(let j = i + 1; j < array.length; j++) {
+            if (array[minimumIndex] > array[j]) {
+                minimumIndex = j;
+            }
+        }
+
+        if (minimumIndex !== i) {
+            swap(array, minimumIndex, i);
+            console.log(chalk.red(util.inspect(array)));
+        } else {
+            console.log(chalk.dim(util.inspect(array)));
         }
     }
     return array;
 }
+console.log('selection', selectionSort(arr));
 
-console.log('insertion', insertionSort(arr))
+
+
