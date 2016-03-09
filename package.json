@@ -1,0 +1,23 @@
+{
+  "name": "node-science",
+  "version": "1.0.0",
+  "description": "Practice exercise for Nashville Software School",
+  "main": "dictionary.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micahp0506/node-science.git"
+  },
+  "author": "Micah Wells <micahp0506@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micahp0506/node-science/issues"
+  },
+  "homepage": "https://github.com/micahp0506/node-science#readme",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "lodash": "^4.6.1"
+  }
+}
